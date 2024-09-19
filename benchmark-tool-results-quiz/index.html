@@ -1,0 +1,1262 @@
+
+<!doctype html>
+<html lang="en" class="view html5-player">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- BEGIN CUSTOM HEAD HTML -->
+    <!-- END CUSTOM HEAD HTML -->
+
+        <base id="cerosBase">
+
+        <script type="text/javascript">
+            (function () {
+                var locationWithNoQuery = document.location.href.split('?')[0].split('#')[0];
+                locationWithNoQuery = locationWithNoQuery.replace(/[><\(\)'"]/g,'');
+
+                if (document.location.pathname.match(/\.html$/)) {
+                    window.cerosBaseUrl = locationWithNoQuery.replace(/[^\/]*\.html$/, '');
+                } else {
+                    window.cerosBaseUrl = locationWithNoQuery.replace(/(\/p|\/page)\/[a-z0-9-]*\/?$/, '/');
+                }
+
+                document.getElementById('cerosBase').href = window.cerosBaseUrl;
+            })();
+        </script>
+
+
+        <script type="text/javascript" src="assets/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="assets/webfont-1.6.3.js"></script>
+
+    <script type="text/javascript">
+        window.cerosContext = {
+        viewAssetsDomain    : '',
+            publicAssetsBaseUrl: 'assets/',
+            isEmbedded: top != window,
+            isVanityDomain: location.hostname !== 'view.ceros.com',
+            previewMode: false,
+            logging: {
+            emitDevWarnings : false,
+                modes: {
+                        'debug': false,
+                        'info': false,
+                        'warn': true,
+                        'error': true
+                }
+            },
+            usePageSlugsInNavigation: false,
+            usePreviewBanner: false,
+            useDocumentLoadingSpinner: true,
+            analyticsApplicationKey: 'player',
+            analyticsMaxDwellTime: 1800,
+            analyticsUrl: '',
+            apiVersion: 'v1',
+            revalidateWithCore: false,
+
+            ajaxCaching: true,
+        mediaDomainMap: null,
+            rollbarPlayerAccessKey: '61d7450b926c4268b5f89b75862f33a9',
+            deploymentName: 'prod',
+            appVersion: 'release.8.14.16.7600d44c6d9abfa441537fc5b253fd87993870dd',
+            rollbarMaxItems: 5,
+        isExported: true,
+            isStudio: false,
+
+            openGraphUrl: '',
+            accountSlug: 'profitero',
+        gracePeriodExpired  : 9007199254740991 < Date.now() / 1000,
+            appSlug: 'benchmark-tool',
+            issueAliasSlug: 'benchmark-tool-results-quiz',
+            issue: {"id":914459,"projectId":128143,"slug":"experience-65d35e131cee1","name":"Benchmark Quiz (RHAPSODY)","status":"published","creationDate":"2024-02-19T13:56:35.000Z","lastModifiedDate":"2024-04-23T13:59:44.000Z","deletionDate":null,"firstPublishedDate":"2024-03-11T18:34:26.000Z","wipExperienceVersionId":3814054,"publishedExperienceVersionId":3981864,"createdByMemberId":15367,"primaryIssueAliasId":1287427,"firstPageThumbnailUrl":"\/\/media-s3-us-east-1.ceros.com\/profitero\/studio-thumbnails\/page-65d35e125e1e2.jpg","importLinkShared":0,"lastPublishedDate":"2024-04-23T14:00:30.000Z","lastModifiedByMemberId":15367,"lastPublishedByMemberId":15367,"passwordProtected":0,"isSSOProtected":0,"auth0UserId":null,"isTemplate":0,"templateSubtitle":null,"templateThumbnailUrl":null,"htmlLanguage":"en","lastUnpublishedDate":null,"lastUnpublishedByMemberId":null,"resourceId":"65d35e13-c204d52cee7c9","title":"Benchmark Quiz (RHAPSODY)"},
+            docVersion: {"id":3981864,"experienceId":914459,"slug":"experience-version-6627befc43f37","loadLowRes":1,"seoNoIndex":0,"googleAnalyticsId":null,"committedJsonUrl":"http:\/\/media-s3-us-east-1.ceros.com\/profitero\/doc-version-json\/v11\/experience-version-6627befc43f37.js","themingBackgroundImageUri":null,"seoTitleKeywords":"","seoMetaKeywords":null,"seoMetaDescription":"","canonicalUrlOverride":"","editorPagesManifest":[{"uri":"\/v1\/account\/profitero\/pages\/page-6627befc43f4c","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/b355cdcb95f701789481be06294cfb2d\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befc67955","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/e45b99c0ce667b5639803c492aaac151\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befca1583","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/198919ed40aeb930edfee59b8bf02b20\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befcca029","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/4c3e14934aa23a33d9e94a1e8b75b439\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befcf231f","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/419eb5cee12a7295b4bffecc090c97b8\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befd25582","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/4629b01f875800adb4363e68ac00597d\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befd62ea6","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/534cbb4b8404e5285f05803a56a5373a\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befd826bb","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/eb7181ee5ffea4d254a25d532df60a22\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befdaaab7","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/91e0f482eb99cfe8880339209af0eb4c\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befdc7c72","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/5fb53013c992aa76f59f895d2375c16e\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befde7432","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/3cbe50cf028a502f87db0d7f68a10ebd\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befe10eef","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/4050e6ef092c5d61b62eca865209d96a\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befe32a94","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/bb61cb8e52bafa6b6212aea806583d6f\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befe54ff6","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/daf17e16b35242fc7ced6466f8714b52\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"},{"uri":"\/v1\/account\/profitero\/pages\/page-6627befe8743f","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/profitero\/page-thumbnails\/2024\/04\/23\/3b104f9608a3495926a9071f62e27e1f\/page-thumbnail.jpg?imageOpt=1&crop=870,496,x0,y0"}],"cdeExportUrl":null,"exportAppVersion":null,"creationDate":"2024-04-23T14:00:30.000Z","modificationDate":"2024-04-23T14:00:30.000Z","publishedDate":"2024-04-23T14:00:28.000Z","committedByMemberId":15367,"unsupportedBrowserRedirectUrl":"","ogTitle":"","ogDescription":"","ogImageUrl":null,"twitterTitle":"","twitterDescription":"","twitterImageUrl":null,"twitterHandle":"","lazyLoading":1,"tarExportUrl":null,"pageNamesInTitle":0,"mainContentLinkText":null,"textMode":"paragraph","zoomControlsEnabled":1,"requireUserConsentForAnalytics":0,"integrateWithCmp":0,"lineHeightCompatibility":"use_baseline_offset","playerServerSideRendering":"no_player_server_side_rendering","layoutSettings":{"layoutPrimarySetting":"viewport-width","maxTabletWidthBreakpoint":1280,"maxMobileWidthBreakpoint":800,"deviceTypeMissingVariantFallback":"mobile"},"carousel":{"enabled":0,"autoTransition":0,"autoTransitionDelay":"5"},"theming":{"arrowsEnabled":0,"swipeEnabled":0,"menuEnabled":0,"backgroundColor":"#FFFFFF","menuFgColor":"#FFFFFF","menuBgColor":"#000000","backgroundImage":null}},
+            fontManifest: {"Google|Nunito Sans|300|normal":{"familyName":"Nunito Sans","familyGuid":"Google|Nunito Sans","fontWeight":300,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Nunito Sans|300|normal","variantName":"Light","cssFamilyName":"Nunito Sans","api":"Google"},"Google|Nunito Sans|400|normal":{"familyName":"Nunito Sans","familyGuid":"Google|Nunito Sans","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Nunito Sans|400|normal","variantName":"Normal","cssFamilyName":"Nunito Sans","api":"Google"},"Google|Nunito Sans|600|normal":{"familyName":"Nunito Sans","familyGuid":"Google|Nunito Sans","fontWeight":600,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Nunito Sans|600|normal","variantName":"Semi-Bold","cssFamilyName":"Nunito Sans","api":"Google"},"Google|Roboto|400|normal":{"familyName":"Roboto","familyGuid":"Google|Roboto","fontWeight":400,"fontStyle":"normal","unitsPerEm":2048,"ascent":1536,"variantGuid":"Google|Roboto|400|normal","variantName":"Normal","cssFamilyName":"Roboto","api":"Google"},"FontPlusUploaded|ad516297-20d1-11ee-aa9b-0e89213b8b87":{"familyName":"Sofia Pro Regular","familyGuid":"FontPlusUploaded|ad513d41-20d1-11ee-aa9b-0e89213b8b87","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":750,"variantGuid":"FontPlusUploaded|ad516297-20d1-11ee-aa9b-0e89213b8b87","variantName":"Normal Regular","cssFamilyName":"Sofia Pro Regular-Norm-4jpItJLr","cssFileURL":"fonts\/0696d8565f2ded986ff2ba65afc905d4\/Sofia+Pro+Regular-Norm-4jpItJLr.css","api":"FontPlusUploaded","woffFileURL":null},"FontPlusUploaded|adf8c19a-c9ca-11ee-aa27-1295aa3866fd":{"familyName":"Sofia Pro SemiBold","familyGuid":"FontPlusUploaded|adf870a0-c9ca-11ee-aa27-1295aa3866fd","fontWeight":400,"fontStyle":"normal","unitsPerEm":2048,"ascent":2273,"variantGuid":"FontPlusUploaded|adf8c19a-c9ca-11ee-aa27-1295aa3866fd","variantName":"Normal Regular","cssFamilyName":"Sofia Pro Semi-7ff0263d9fd50179","cssFileURL":"fonts\/bec2879c779794ebf545707f635c0250\/Sofia+Pro+Semi-7ff0263d9fd50179.css","api":"FontPlusUploaded","woffFileURL":null}},
+        whiteLabeling   : true,
+        isTrialAccount      : false,
+        allowCommerceIntegration  : false,
+        allowEmbeddedPlayerSdk    : true,
+        allowAdaptiveLayouts: true,
+            commerceSettings: {
+            panelWidth      : null,
+            panelHeight     : null,
+                productUrl: '',
+                shoppingCartUrl: '',
+            },
+                themeObj: {
+                arrowsEnabled    : false,
+                swipeEnabled     : false,
+                menuEnabled      : false,
+                    menuFgColor: '#FFFFFF',
+                    menuBgColor: '#000000',
+                    menuHoverOpacity: 0.6,
+                    backgroundColor: '#FFFFFF',
+                backgroundImage  :
+                        null
+
+                },
+            googleFontUrl: '',
+            featureFlags: {"Password Protected Experiences":true,"Getty Image Integration":false,"Getty Video Integration":false,"Accessibility":false,"(BETA) Protected Preview":false,"Cookie Compliance":true,"Position Interactions":true,"Editor":true,"New Text Tool":true,"Studio API":false,"SSO Protected Experiences":false,"Studio Redesign":true,"(New Text Tool) List And Bullets":false,"(New Text Tool) Subscript And Superscript":false,"(New Text Tool) Html Element":true,"(New Text Tool) Object States":false,"(New Text Tool) Spellcheck":false,"Editor for Creators":false,"Remove window.eval":true,"Editor Image Crop And Resize":true,"Editor Debug Mode":false,"Improved Team Management":true,"(New Text Tool) Columns":true,"Gemma":false,"Open in MarkUp":true,"Create Account from Login":true,"Individual Accounts":true,"AI Templates":true,"New Text Tool Experience Converter (requires New Text Tool)":true,"Studio Lite":true,"Intercom Support Chat":true,"Editor Sign Up":true,"Beamer":true,"Showcase Experience":false,"Component Library":true,"SDR Editor Invite":false,"Force Protected Experiences":false,"Request Feedback":false,"Editor Free For Import":true,"Home Screen":true,"Seismic Integration":false,"Gemma in Admin":false,"New Selection Behavior":false,"AI Features":false,"Experience Sharing":true,"Show Import Design Files":true,"Player Server Side Rendering":false},
+            analyticsTrackers: {
+                cerosPlayerTracker: {enabled: true },
+                googleAnalyticsTracker: {"enabled":true,"trackingID":"G-YQ9XJ0BPB2","trackPageViewsForStandaloneExperiences":true,"eventCategory":"ceros-event","trackClicks":true,"clickEventAction":"ceros-click","trackHovers":true,"hoverEventAction":"ceros-hover"},
+                googleTagManagerTracker: {"enabled":true,"containerID":"GTM-WRCR8M6","trackPageViewsForStandaloneExperiences":true,"eventCategory":"ceros-event","trackClicks":true,"clickEventAction":"ceros-click","trackHovers":true,"hoverEventAction":"ceros-hover","initializeGTMForEmbeddedExperiences":false},
+                marketoTracker: {enabled: false, accountId: '' },
+                eloquaTracker: {enabled: false, siteId: '', cookieDomain: ''},
+                universalAnalyticsTracker: {enabled: false }
+            },
+
+        
+            useOptimizedJs: true,
+        };
+    </script>
+
+    <!--
+      DISPLAY SETTINGS
+    -->
+        <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="monitor-signature" content="monitor:player:html5"/>
+
+    <title>Benchmark Quiz (RHAPSODY)</title>
+
+
+
+
+    <meta property="og:title" content="Benchmark Quiz (RHAPSODY)"/>
+        <meta property="og:image" content="media/b355cdcb95f701789481be06294cfb2d/page-thumbnail.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:type" content="website"/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Benchmark Quiz (RHAPSODY)">
+    <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="media/b355cdcb95f701789481be06294cfb2d/page-thumbnail.jpg">
+
+    <script language="Javascript" id="docversion-request-script">
+        window.docVersionRequest = window.jQuery.ajax({
+            url           : "media/experience-version-6627befc43f37.js",
+            dataType      : 'jsonp',
+            jsonp         : false, 
+            cache         : true,  
+            jsonpCallback : "loadDocVersion_v1_account_profitero_document_versions_experience_version_6627befc43f37",
+            success       : window.jQuery.noop 
+        });
+    </script>
+
+    <!--
+      FONTS
+    -->
+
+    
+    
+        <!-- BEGIN GOOGLE ANALYTICS INTEGRATION HTML -->
+        <script async src="https://www.googletagmanager.com/gtag/js"></script>
+        <script>
+                if (top === window) {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-YQ9XJ0BPB2', {
+                        send_page_view: false
+                    });
+                }
+        </script>
+        <!-- END GOOGLE ANALYTICS INTEGRATION HTML -->
+    
+
+
+
+    <script type="text/javascript">
+        window.cerosPlayerLoadStart = new Date();
+    </script>
+
+    <!--
+        Although the player itself no longer uses requirejs, users can still use requirejs with
+        the SDK. Therefore, we need to continue including it here... for now...
+    -->
+    <script
+        type="text/javascript"
+        crossorigin="anonymous"
+        src="assets/player/shared/libs/require/require-min.b03b66057d7df9b2cc9aa9c4c18aa569.js">
+    </script>
+
+    <script
+            type="text/javascript"
+            async
+            crossorigin="anonymous"
+            charset="UTF-8"
+            src="assets/player/applications/html5-player/bootstrap-optimized.d8416e6c4aa00a47dcbe7dc1bd180e07.js">
+    </script>
+
+    <link rel="stylesheet" type="text/css"
+          href="assets/player/applications/html5-player/css/html5-player.164d02c86dd08df49058bf5a3da67137.css"/>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+        }
+
+        body:-ms-fullscreen::-ms-backdrop {
+            background-color: #FFFFFF;
+        }
+    </style>
+
+</head>
+<body>
+
+
+        <!-- BEGIN GOOGLE TAG MANAGER INTEGRATION HTML -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WRCR8M6"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <script>
+        if (top === window) {
+
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WRCR8M6');
+
+        }
+        </script>
+        <!-- END GOOGLE TAG MANAGER INTEGRATION HTML -->
+
+
+    <noscript>
+        
+            <div class="page"><p class="text-plus-component">Is your brand positioned to thrive in this fast-moving omni world?</p>
+<p class="text-plus-component">Start →</p>
+<p class="text-plus-component">Take this brief assessment to see how your brand stacks up.</p>
+<p class="text-plus-component">Takes 4 mins</p>
+<img src="media/a4e72c571aa4259180f07b7d30018dab/time-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Takes 4 mins</p>
+<img src="media/a4e72c571aa4259180f07b7d30018dab/time-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Start →</p>
+<p class="text-plus-component">Take this brief assessment to see how your brand stacks up.</p>
+<p class="text-plus-component">Is your brand positioned to thrive in this fast-moving omni world?</p>
+<p class="text-plus-component">Compare your organization's omnichannel capabilities in eight key areas to industry benchmarks collected from nearly 400 global eComm leaders at brand manufacturers.</p></div>
+            <div class="page"><p class="text-plus-component">Select the one category that most of your products are in:</p>
+<p class="text-plus-component">Apparel & Footwear</p>
+<p class="text-plus-component">Baby</p>
+<p class="text-plus-component">Beer, Wine & Spirits</p>
+<p class="text-plus-component">Beauty & Cosmetics</p>
+<p class="text-plus-component">DIY, Tools & Construction</p>
+<p class="text-plus-component">Electronics</p>
+<p class="text-plus-component">Fresh Foods</p>
+<p class="text-plus-component">Grocery</p>
+<p class="text-plus-component">Home Goods</p>
+<p class="text-plus-component">Office Supplies</p>
+<p class="text-plus-component">Pet Supplies</p>
+<p class="text-plus-component">Pharmacy, Health & Wellness</p>
+<p class="text-plus-component">Sporting Goods & Outdoor</p>
+<p class="text-plus-component">Toys & Games</p>
+<p class="text-plus-component">Apparel & Footwear</p>
+<p class="text-plus-component">Baby</p>
+<p class="text-plus-component">Beer, Wine & Spirits</p>
+<p class="text-plus-component">Beauty & Cosmetics</p>
+<p class="text-plus-component">DIY, Tools & Construction</p>
+<p class="text-plus-component">Electronics</p>
+<p class="text-plus-component">Fresh Foods</p>
+<p class="text-plus-component">Grocery</p>
+<p class="text-plus-component">Home Goods</p>
+<p class="text-plus-component">Office Supplies</p>
+<p class="text-plus-component">Pet Supplies</p>
+<p class="text-plus-component">Pharmacy, Health & Wellness</p>
+<p class="text-plus-component">Sporting Goods & Outdoor</p>
+<p class="text-plus-component">Toys & Games</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Apparel & Footwear</p>
+<p class="text-plus-component">Baby</p>
+<p class="text-plus-component">Beer, Wine & Spirits</p>
+<p class="text-plus-component">Beauty & Cosmetics</p>
+<p class="text-plus-component">DIY, Tools & Construction</p>
+<p class="text-plus-component">Electronics</p>
+<p class="text-plus-component">Fresh Foods</p>
+<p class="text-plus-component">Grocery</p>
+<p class="text-plus-component">Home Goods</p>
+<p class="text-plus-component">Office Supplies</p>
+<p class="text-plus-component">Pet Supplies</p>
+<p class="text-plus-component">Pharmacy, Health & Wellness</p>
+<p class="text-plus-component">Sporting Goods & Outdoor</p>
+<p class="text-plus-component">Toys & Games</p>
+<p class="text-plus-component">Apparel & Footwear</p>
+<p class="text-plus-component">Baby</p>
+<p class="text-plus-component">Beer, Wine & Spirits</p>
+<p class="text-plus-component">Beauty & Cosmetics</p>
+<p class="text-plus-component">DIY, Tools & Construction</p>
+<p class="text-plus-component">Electronics</p>
+<p class="text-plus-component">Fresh Foods</p>
+<p class="text-plus-component">Grocery</p>
+<p class="text-plus-component">Home Goods</p>
+<p class="text-plus-component">Office Supplies</p>
+<p class="text-plus-component">Pet Supplies</p>
+<p class="text-plus-component">Pharmacy, Health & Wellness</p>
+<p class="text-plus-component">Sporting Goods & Outdoor</p>
+<p class="text-plus-component">Toys & Games</p>
+<p class="text-plus-component">Select the one category that most of your products are in:</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Less than 10%</p>
+<p class="text-plus-component">What percentage of your company’s overall annual revenue comes from eCommerce?</p>
+<p class="text-plus-component">10% - 19.9%</p>
+<p class="text-plus-component">20% - 39.9%</p>
+<p class="text-plus-component">40% or more</p>
+<p class="text-plus-component">Don't know</p>
+<p class="text-plus-component">Less than 10%</p>
+<p class="text-plus-component">10% - 19.9%</p>
+<p class="text-plus-component">20% - 39.9%</p>
+<p class="text-plus-component">40% or more</p>
+<p class="text-plus-component">Don't know</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Less than 10%</p>
+<p class="text-plus-component">10% - 19.9%</p>
+<p class="text-plus-component">20% - 39.9%</p>
+<p class="text-plus-component">40% or more</p>
+<p class="text-plus-component">Don't know</p>
+<p class="text-plus-component">Less than 10%</p>
+<p class="text-plus-component">10% - 19.9%</p>
+<p class="text-plus-component">20% - 39.9%</p>
+<p class="text-plus-component">40% or more</p>
+<p class="text-plus-component">Don't know</p>
+<p class="text-plus-component">What percentage of your company’s overall annual revenue comes from eCommerce?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Local leadership has articulated that eCommerce is a strategic priority</p>
+<p class="text-plus-component">What best describes strategy & leadership in your organization?</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">All of the above + goals are co-developed with key retail customer partners and part of regular updates and discussions</p>
+<p class="text-plus-component">All above + each functional team in the business has specific eCommerce goals built into their strategic growth plans and annual performance review KPIs</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Local leadership has articulated that eCommerce is a strategic priority</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">All of the above + goals are co-developed with key retail customer partners and part of regular updates and discussions</p>
+<p class="text-plus-component">All above + each functional team in the business has specific eCommerce goals built into their strategic growth plans and annual performance review KPIs</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Local leadership has articulated that eCommerce is a strategic priority</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">All of the above + goals are co-developed with key retail customer partners and part of regular updates and discussions</p>
+<p class="text-plus-component">All above + each functional team in the business has specific eCommerce goals built into their strategic growth plans and annual performance review KPIs</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Local leadership has articulated that eCommerce is a strategic priority</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">All of the above + goals are co-developed with key retail customer partners and part of regular updates and discussions</p>
+<p class="text-plus-component">All above + each functional team in the business has specific eCommerce goals built into their strategic growth plans and annual performance review KPIs</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes strategy & leadership in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">The organization has not been trained on eCommerce / Omnichannel importance and/or best practices</p>
+<p class="text-plus-component">Relevant cross-functional teams have been trained on eCommerce / Omnichannel importance and/or best practices, but understanding is minimal across teams</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is embedded within the organization and teams understand the importance and best practices to support ownership</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">The organization has not been trained on eCommerce / Omnichannel importance and/or best practices</p>
+<p class="text-plus-component">Relevant cross-functional teams have been trained on eCommerce / Omnichannel importance and/or best practices, but understanding is minimal across teams</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is embedded within the organization and teams understand the importance and best practices to support ownership</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes eCommerce & omnichannel education progress in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">The organization has not been trained on eCommerce / Omnichannel importance and/or best practices</p>
+<p class="text-plus-component">Relevant cross-functional teams have been trained on eCommerce / Omnichannel importance and/or best practices, but understanding is minimal across teams</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is embedded within the organization and teams understand the importance and best practices to support ownership</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">The organization has not been trained on eCommerce / Omnichannel importance and/or best practices</p>
+<p class="text-plus-component">Relevant cross-functional teams have been trained on eCommerce / Omnichannel importance and/or best practices, but understanding is minimal across teams</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is embedded within the organization and teams understand the importance and best practices to support ownership</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes eCommerce & omnichannel education progress in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">We do not discuss eCommerce in JBPs</p>
+<p class="text-plus-component">We include eCommerce in our JBPs, but only sparingly and not as part of an integrated strategy</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">In addition to integrated planning and sharing data, we set specific goals, requirements and budgets for eCommerce, and have dedicated plans for digital growth</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">We do not discuss eCommerce in JBPs</p>
+<p class="text-plus-component">We include eCommerce in our JBPs, but only sparingly and not as part of an integrated strategy</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">In addition to integrated planning and sharing data, we set specific goals, requirements and budgets for eCommerce, and have dedicated plans for digital growth</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes retailer collaboration & joint business planning capabilities in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">We do not discuss eCommerce in JBPs</p>
+<p class="text-plus-component">We include eCommerce in our JBPs, but only sparingly and not as part of an integrated strategy</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">In addition to integrated planning and sharing data, we set specific goals, requirements and budgets for eCommerce, and have dedicated plans for digital growth</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">We do not discuss eCommerce in JBPs</p>
+<p class="text-plus-component">We include eCommerce in our JBPs, but only sparingly and not as part of an integrated strategy</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">In addition to integrated planning and sharing data, we set specific goals, requirements and budgets for eCommerce, and have dedicated plans for digital growth</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes retailer collaboration & joint business planning capabilities in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">The role does not exist</p>
+<p class="text-plus-component">Designated role within customer sales and/or eCommerce teams</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Dedicated role within an integrated eCommerce / Customer Sales team (may have additional support from eCommerce function)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">The role does not exist</p>
+<p class="text-plus-component">Designated role within customer sales and/or eCommerce teams</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Dedicated role within an integrated eCommerce / Customer Sales team (may have additional support from eCommerce function)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes omnichannel account management resources in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">The role does not exist</p>
+<p class="text-plus-component">Designated role within customer sales and/or eCommerce teams</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Dedicated role within an integrated eCommerce / Customer Sales team (may have additional support from eCommerce function)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">The role does not exist</p>
+<p class="text-plus-component">Designated role within customer sales and/or eCommerce teams</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Dedicated role within an integrated eCommerce / Customer Sales team (may have additional support from eCommerce function)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes omnichannel account management resources in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Do not have a dedicated eCommerce assortment strategy</p>
+<p class="text-plus-component">Adapt our offline assortment to meet requirements or trends for eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on distinct eCommerce retailer and fulfillment models</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Do not have a dedicated eCommerce assortment strategy</p>
+<p class="text-plus-component">Adapt our offline assortment to meet requirements or trends for eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on distinct eCommerce retailer and fulfillment models</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes assortment and innovation strategy in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Do not have a dedicated eCommerce assortment strategy</p>
+<p class="text-plus-component">Adapt our offline assortment to meet requirements or trends for eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on distinct eCommerce retailer and fulfillment models</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Do not have a dedicated eCommerce assortment strategy</p>
+<p class="text-plus-component">Adapt our offline assortment to meet requirements or trends for eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on distinct eCommerce retailer and fulfillment models</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes assortment and innovation strategy in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Basic content in place across most/all SKUs on key retailer sites</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">All of the above AND dedicated resources in place to action improvements and to actively audit retailer sites to ensure compliance / benchmark vs competition</p>
+<p class="text-plus-component">All of the above AND utilizing analytical processes to identify content optimizations that drive brand sales lift</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Basic content in place across most/all SKUs on key retailer sites</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">All of the above AND dedicated resources in place to action improvements and to actively audit retailer sites to ensure compliance / benchmark vs competition</p>
+<p class="text-plus-component">All of the above AND utilizing analytical processes to identify content optimizations that drive brand sales lift</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes content management in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Basic content in place across most/all SKUs on key retailer sites</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">All of the above AND dedicated resources in place to action improvements and to actively audit retailer sites to ensure compliance / benchmark vs competition</p>
+<p class="text-plus-component">All of the above AND utilizing analytical processes to identify content optimizations that drive brand sales lift</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Basic content in place across most/all SKUs on key retailer sites</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">All of the above AND dedicated resources in place to action improvements and to actively audit retailer sites to ensure compliance / benchmark vs competition</p>
+<p class="text-plus-component">All of the above AND utilizing analytical processes to identify content optimizations that drive brand sales lift</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes content management in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">No dedicated retail media spend</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Dedicated budget and retail media is included as part of total retailer investment and incorporated in JBP negotiations</p>
+<p class="text-plus-component">Dedicated budget, retail media is part of total brand media planning, and it is a priority vs. other media vehicles</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">No dedicated retail media spend</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Dedicated budget and retail media is included as part of total retailer investment and incorporated in JBP negotiations</p>
+<p class="text-plus-component">Dedicated budget, retail media is part of total brand media planning, and it is a priority vs. other media vehicles</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes retail digital media planning in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">No dedicated retail media spend</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Dedicated budget and retail media is included as part of total retailer investment and incorporated in JBP negotiations</p>
+<p class="text-plus-component">Dedicated budget, retail media is part of total brand media planning, and it is a priority vs. other media vehicles</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">No dedicated retail media spend</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Dedicated budget and retail media is included as part of total retailer investment and incorporated in JBP negotiations</p>
+<p class="text-plus-component">Dedicated budget, retail media is part of total brand media planning, and it is a priority vs. other media vehicles</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes retail digital media planning in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Ad hoc eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources (e.g., digital shelf, shopper panel)</p>
+<p class="text-plus-component">All of the above plus the use of advanced analytics models (e.g., predictive sales and inventory forecasting; casual analytics; regression or attribution modeling)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Ad hoc eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources (e.g., digital shelf, shopper panel)</p>
+<p class="text-plus-component">All of the above plus the use of advanced analytics models (e.g., predictive sales and inventory forecasting; casual analytics; regression or attribution modeling)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes data & insights in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">Ad hoc eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources (e.g., digital shelf, shopper panel)</p>
+<p class="text-plus-component">All of the above plus the use of advanced analytics models (e.g., predictive sales and inventory forecasting; casual analytics; regression or attribution modeling)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">Ad hoc eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources (e.g., digital shelf, shopper panel)</p>
+<p class="text-plus-component">All of the above plus the use of advanced analytics models (e.g., predictive sales and inventory forecasting; casual analytics; regression or attribution modeling)</p>
+<p class="text-plus-component">Don't know / doesn't apply</p>
+<p class="text-plus-component">What best describes data & insights in your organization?</p>
+<p class="text-plus-component">Next →</p>
+<p class="text-plus-component">← Back</p></div>
+            <div class="page"><p class="text-plus-component">Almost done!
+While we analyze your results, please complete the form to get your Omnichannel Transformation Scorecard and next-best-action insight.</p>
+<p class="text-plus-component">Almost done! 
+While we analyze your results, please answer the following questions to get your Omnichannel Transformation Scorecard and next-best-action insight.</p></div>
+            <div class="page"><img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Accelerate your omni success by democratizing data & knowledge through cross-functional teams and retailer partnerships.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">crawl</p>
+<p class="text-plus-component">You're keeping pace with evolving digital shelf capabilities, but there's more to do.</p>
+<p class="text-plus-component">Take action.</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">4</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">N/A</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">N/A</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">4</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Accelerate your omni success by democratizing data & knowledge through cross-functional teams and retailer partnerships.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">crawl</p>
+<p class="text-plus-component">You're keeping pace with evolving digital shelf capabilities, but there's more to do.</p>
+<p class="text-plus-component">Take action.</p>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p></div>
+            <div class="page"><img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Accelerate efficiency and growth by automating eCommerce workflows, and focus your efforts on high ROI actions informed by causal analytics.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">walk</p>
+<p class="text-plus-component">You're building omnichannel ways of working, but need to pick up the pace.</p>
+<p class="text-plus-component">You're doing ok.</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">4</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">N/A</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">Accelerate efficiency and growth by automating eCommerce workflows, and focus your efforts on high ROI actions informed by causal analytics.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">walk</p>
+<p class="text-plus-component">You're building omnichannel ways of working, but need to pick up the pace.</p>
+<p class="text-plus-component">You're doing ok.</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">N/A</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">4</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/></div>
+            <div class="page"><img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">N/A</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">4</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Solidify your lead by embedding omnichannel behaviors and automation across your org.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">run</p>
+<p class="text-plus-component">Overall, your company is leading the way in omnichannel maturity.</p>
+<p class="text-plus-component">Good job!</p>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/d194e30cd7468194d0c8f1f9ee6c3adf/grid-square-graph-line-full-page-on-white-paper-background-paper-grid-square-graph-line-texture-of-note-book-blank-blue-grid-line-on-paper-white-color-empty-squared-grid-graph-for-architecture-image-full.jpg" alt=""  class="image-component"/>
+<img src="media/46271c9d6f314887c769958d1818f6d9/image-full.png" alt=""  class="image-component"/>
+<img src="media/831141a931128f6e0bf543ccbb8d39cd/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Here's your Omnichannel Transformation Scorecard!</p>
+<p class="text-plus-component">assessment results</p>
+<img src="media/b2f5af3edcecfd72a6da6c27683b09ca/profitero-logo-color.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Contact us →</p>
+<p class="text-plus-component">Want to know more? Contact our Advisory team today.</p>
+<p class="text-plus-component">Based on your results vs. the benchmarks above, your core area for improvement is:</p>
+<p class="text-plus-component">Solidify your lead by embedding omnichannel behaviors and automation across your org.
+
+This chart pinpoints your organization’s biggest gaps in omnichannel maturity compared with industry benchmarks. Using our Omnichannel Transformation Model, we’ve identified your top opportunities for growth as you continue the journey to omnichannel maturity.</p>
+<p class="text-plus-component">run</p>
+<p class="text-plus-component">Overall, your company is leading the way in omnichannel maturity.</p>
+<p class="text-plus-component">Good job!</p>
+<p class="text-plus-component">Strategy & Leadership</p>
+<p class="text-plus-component">eComm & Omni Education</p>
+<p class="text-plus-component">Retailer Collab & JBP</p>
+<p class="text-plus-component">Omni Account Management</p>
+<p class="text-plus-component">Assortment & Innovation Strategy</p>
+<p class="text-plus-component">Content Management</p>
+<p class="text-plus-component">Retailer Digital Media Planning</p>
+<p class="text-plus-component">Data & Insights</p>
+<p class="text-plus-component">N/A</p>
+<p class="text-plus-component">1</p>
+<p class="text-plus-component">2</p>
+<p class="text-plus-component">3</p>
+<p class="text-plus-component">4</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Ongoing eCommerce sales performance tracking plus analysis of non-sales data sources</p>
+<p class="text-plus-component">Dedicated budget for retail media separate from brand budgets, covering some trade promotions and product launches</p>
+<p class="text-plus-component">Basic content in place and aligned to industry/retailer best practices and enhanced content utilized for top SKUs</p>
+<p class="text-plus-component">Have dedicated product strategy and innovation process focused on eCommerce</p>
+<p class="text-plus-component">Dedicated role within separated eCommerce team</p>
+<p class="text-plus-component">We include eCommerce in our JBPs as part of an integrated strategy, and share data & insights with retailers related to eCommerce multiple times throughout the year</p>
+<p class="text-plus-component">Cross-functional teams have a solid understanding of the eCommerce basics and work with the eCommerce team on an ongoing basis for education opportunities</p>
+<p class="text-plus-component">eCommerce is a strategic priority locally and measurable goals are established, tracked and communicated to organization</p>
+<p class="text-plus-component">Your score</p>
+<img src="media/a46f7a945ac373c073a35a3a07d19ad8/star-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Industry benchmark</p>
+<p class="text-plus-component">See my next best actions ↓</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p>
+<img src="media/25ee7ce380a07f4695e254cb9ddedc9c/mail-icon-full.png" alt=""  class="image-component"/>
+<img src="media/a99ff03b277e1f510563f251c79ffc09/x-icon-full.png" alt=""  class="image-component"/>
+<img src="media/394d8f06dedc7043519c1e0b172c1c55/image-full.png" alt=""  class="image-component"/>
+<p class="text-plus-component">Share this quiz with a colleague:</p>
+<p class="text-plus-component">Organization maturity assessments & design
+Jobs to be done mapping
+Capabilities benchmarking
+Custom scorecards to track & democratize KPIs
+Industry-leading reports & insights to drive ROI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, it's critical to implement education & practices to ensure your cross-functional teams operate as a well-oiled omni machine. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">people</p>
+<img src="media/d20248a884d814eb110b5cef6c753d27/team-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Team workshops & training sessions
+Retail media & connected search strategies
+Assortment optimization
+Automated commerce operations & sales recovery tools
+Optimized content created by predictive analytics & AI</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, brands with cutting-edge, data-driven approaches will be best positioned to leapfrog the competition. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">PRACTICES</p>
+<img src="media/fb5e53f5513dad4c9482cd42a640741d/method-icon.svg" alt=""  class="image-component"/>
+<p class="text-plus-component">Channel strategy development 
+JBP best practices & retailer playbooks 
+Custom performance dashboards
+Automated bids using digital shelf data to optimize Retail Media
+Causal market share data & analytics</p>
+<p class="text-plus-component">When it comes to accelerating omnichannel transformation, creating “harmony” is a must for both customer relationships and tech stacks. 
+
+Profitero partners with leading brands to achieve this through:</p>
+<p class="text-plus-component">partnerships</p>
+<img src="media/91900d38dea7ad0c578650ef98cb7689/partnership-icon.svg" alt=""  class="image-component"/></div>
+    </noscript>
+
+
+<div id="main"></div>
+<div id="backgroundContainer"></div>
+
+
+    <!-- BEGIN CUSTOM HTML -->
+    <script>
+    (function(){
+        'use strict'; 
+        require.config({ 
+            paths: { 
+                CerosSDK: '//sdk.ceros.com/standalone-player-sdk-v5.min' 
+            } 
+        }); 
+        require(['CerosSDK'], function (CerosSDK) {
+            CerosSDK.findExperience() 
+                .fail(function (error) { 
+                    console.error(error); 
+                })
+                .done(function (experience) {
+                    const quiz = {
+                        run: {average:2.5, pageNum:15},
+                        walk: {average:1.5, pageNum:14},
+                        crawl: {average:0, pageNum:13}
+                    }
+
+                    let texts = []
+                    let answers = experience.findLayersByTag("answer")
+                    let allStars = experience.findLayersByTag("stars").layers
+                    let allGraphs = experience.findLayersByTag("graph").layers
+                    let areasForImprovemnets = experience.findLayersByTag("areas-for-improvemnets").layers
+
+                    let allPages = 10
+                    let previousPageNumber = 1
+                    let currentPageNumber = 1
+                    let strokeWidth = experience.getCurrentPage().getWidth()
+
+                    // Function to get URL parameters
+                    const getQueryParams = () => {
+                        const params = new URLSearchParams(window.location.search);
+                        let points = [];
+                        for (let i = 1; i <= 8; i++) {
+                            let paramValue = parseInt(params.get(`q${i}`), 10);
+                            points.push(isNaN(paramValue) ? 0 : paramValue); // Default to 0 if NaN
+                        }
+                        console.log('Parsed URL parameters:', points);
+                        return points;
+                    };
+
+                    // Initialize points from URL or set defaults
+                    let amount = 8;
+                    let points = getQueryParams(); // Read the points from URL
+
+                    // ANSWERS TO FIRST PART OF QUESTIONS
+                    const selectFunction = hots => {
+                        let select = document.getElementById(hots.id).parentElement
+                        let text = select.querySelector('.text') ?? select.querySelector('.text-plus')
+                        let txt = text.querySelector('p') ?? select.querySelector('span')
+                        texts[hots.page.pageNumber] = txt.innerText
+                    }
+                    let selections = experience.findLayersByTag("selection")
+                    selections.on(CerosSDK.EVENTS.CLICKED, selectFunction)
+
+                    // ANSWERS TO SECOND PART OF QUESTIONS
+                    const getOrderNumber = (t, name) => {
+                        let tag = t.find(q => q.includes(name))
+                        return parseInt(tag ? tag.split(':').pop() : '0', 10); // Handle empty tag gracefully
+                    }
+
+                    const clickedCallback = layer => {
+                        let num = getOrderNumber(layer.page.tags, 'question:')
+                        let value = getOrderNumber(layer.tags, 'value:')
+                        if (num !== undefined) {
+                            points[num-1] = isNaN(value) ? 0 : value; // Only assign valid numbers, default to 0 if NaN
+                        }
+                        console.log('Clicked on layer:', layer, ' - Points:', points);
+                    }
+                    answers.on(CerosSDK.EVENTS.CLICKED, clickedCallback)
+
+                    // FORMULAS
+                    const summarize = arra => {
+                        let validNumbers = arra.filter(num => num !== undefined && !isNaN(num));
+                        let n = validNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                        console.log('Summarize:', validNumbers, 'Result:', n / validNumbers.length);
+                        return n / validNumbers.length;
+                    };
+
+                    // SETTING RESULTS
+                    let addressLink = ''
+                    let resultPage = 0
+                    let score = ''
+                    let options = []
+                    const calcs = () => {
+                        // ADDING QUERY TO URL
+                        let queries = [];
+                        for (let j = 0; j < points.length; j++) {
+                            queries[j] = `q${j+1}=${points[j]}`; // Keep the original points intact
+                        }
+                        // GETTING RESULT PAGE NUMBER
+                        let poi = points.filter(p => p > 0);
+                        let ave = summarize(poi);
+                        console.log('Points:', points, 'Filtered Points:', poi, 'Average:', ave);
+
+                        for (let prop in quiz) {
+                            if (ave > quiz[prop].average) {
+                                resultPage = quiz[prop].pageNum;
+                                score = prop;
+                                break;
+                            }
+                        }
+                        let query = queries.join('&');
+                        let url = window.location.href.split('?')[0]; // Split by '?' to clean the current query string
+                        addressLink = `${url}?page=${resultPage}&${query}`; // Update URL format to use 'page' parameter
+
+                        // Update the URL without reloading the page
+                        window.history.replaceState(null, '', addressLink); 
+                        console.log('Updated Address Link:', addressLink);
+
+                        // AREAS FOR IMPROVEMENTS
+                        options = [];
+                        const sumAndAverage = (arr, nam) => {
+                            let ar = arr.filter(a => a > 0);
+                            let sum = summarize(ar);
+                            sum = isNaN(sum) ? 100 : sum.toFixed(4);
+                            options.push({ area: nam, number: parseFloat(sum) });
+                        }
+                        sumAndAverage([points[0], points[2], points[7]], 'partnerships');
+                        sumAndAverage([points[1], points[4], points[6]], 'practices');
+                        sumAndAverage([points[3], points[5]], 'people');
+                        options.sort((a, b) => parseFloat(a.number) - parseFloat(b.number));
+                    }
+
+                    // PAGE CHANGES
+                    const pageChangedCallback = function(page){
+                        points.length = amount;
+
+                        // DYNAMIC PROGRESS BAR
+                        currentPageNumber = page.getPageNumber();
+                        let procentage = (currentPageNumber - 1) / allPages * strokeWidth;
+                        document.documentElement.style.setProperty('--progress', `${procentage}px`);
+                        console.log('Page changed to:', currentPageNumber);
+
+                        // FORM PAGE
+                        if (currentPageNumber === goResults.page.pageNumber) {
+                            calcs();
+
+                            texts = [...texts].filter(tex => tex !== undefined);
+                            let form = document.querySelector('div.hubspot-form').firstChild;
+                            let mutation = new MutationObserver(entries => {
+                                let additional = [addressLink, score, options[0].area];
+                                let res = (texts.length !== 0) ? texts.concat(points) : [0, 0].concat(points).fill('the quiz has been canceled during filling');
+                                res = res.concat(additional);
+                                let hiddenFields = Array.from(form.querySelectorAll('input[type="hidden"].hs-input'));
+                                for (let hiddenField of hiddenFields) {
+                                    hiddenField.value = res[hiddenFields.indexOf(hiddenField)];
+                                }
+                            });
+                            mutation.observe(form, { childList: true });
+                        }
+
+                        // RESULTS PAGES
+                        if (page.getTags().includes('results')) {
+                            calcs();
+                            window.history.replaceState(null, '', addressLink); // Update the URL to prevent accidental changes on reload
+
+                            // DYNAMIC GRAPH
+                            let stars = getProperElements(allStars);
+                            let graph = getProperElements(allGraphs);
+                            let areas = getProperElements(areasForImprovemnets, true);
+                            let heights = [];
+                            let vertices = [];
+                            for (let i = 0; i < stars.length; i++) {
+                                stars[i].style.setProperty('transition', 'left 1s 1s ease-in-out');
+                                stars[i].style.setProperty('left', `${points[i] * 69}px`);
+                                heights[i] = (100 * i) / (stars.length - 1);
+                                vertices[i] = `${(points[i] / 4) * 100}% ${heights[i]}%`;
+                                heights[i] = `0% ${heights[i]}%`;
+                            }
+                            graph.style.setProperty('clip-path', `polygon(0% 0%,${heights.join(',')},0% 100%)`);
+                            graph.style.setProperty('transition', 'clip-path 1s 1s ease-in-out');
+                            graph.style.setProperty('clip-path', `polygon(0% 0%,${vertices.join(',')},0% 100%)`);
+
+                            if (options[0].area.toLowerCase() === 'partnerships') {
+                                let partnership = experience.findLayerById(areas.items[0].id);
+                                partnership.show();
+                                return;
+                            }
+                            if (options[0].area.toLowerCase() === 'practices') {
+                                let practice = experience.findLayerById(areas.items[1].id);
+                                practice.show();
+                                return;
+                            }
+                            let people = experience.findLayerById(areas.items[2].id);
+                            people.show();
+                        }
+                    }
+                    experience.on(CerosSDK.EVENTS.PAGE_CHANGED, pageChangedCallback);
+
+                    const pageChangingCallback = page => previousPageNumber = page.getPageNumber();
+                    experience.on(CerosSDK.EVENTS.PAGE_CHANGING, pageChangingCallback);
+
+                    // GO TO RESULTS
+                    const layerShownCallback = hot => experience.goToPage(parseFloat(resultPage));
+                    let goResults = experience.findLayersByTag("goto:results").layers[0];
+                    goResults.on(CerosSDK.EVENTS.SHOWN, layerShownCallback);
+
+                    // JUMPING BETWEEN QUESTIONS
+                    const nextPageFunction = cta => {
+                        if (cta.tags.includes('go-next')) {
+                            experience.goToPage(currentPageNumber + 1);
+                            console.log('Going to next page:', currentPageNumber + 1);
+                            return;
+                        }
+                        experience.goToPage(currentPageNumber - 1);
+                        console.log('Going to previous page:', currentPageNumber - 1);
+                    }
+                    let nav = experience.findLayersByTag("navigation");
+                    nav.on(CerosSDK.EVENTS.CLICKED, nextPageFunction);
+                }) 
+        }); 
+    })();
+</script>
+
+<style>
+    :root{
+        --progress: 20px;
+    }
+    .shape[id*='65d45ef1e074e'],
+    .shape[id*='65df234b0773a']{
+        transition: width 1s ease !important;
+        width: var(--progress) !important;
+    }
+</style>
+    <!-- END CUSTOM HTML -->
+
+
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+
+    <div id="page-transition-aria-live" class="sr-only" aria-live="assertive"></div>
+</body>
+</html>
