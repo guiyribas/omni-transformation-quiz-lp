@@ -1102,23 +1102,15 @@ Profitero partners with leading brands to achieve this through:</p>
                         // ADDING QUERY TO URL
                         let queries = []
                         let link = window.location.href
-                        let index = -1
+                        let index = link.indexOf('&') - 1; // Find the first `&` to start after the `page=15`
                         console.log('points', points)
                         for(let j=0; j<points.length; j++){
-                            console.log('!!! FOR !!!')
-                            console.log('index before', index)
-                            console.log('j',j)
-                            console.log('link', link)
-                            console.log('points[j]', points[j])
                             index = link.indexOf('=', index+1)
-                            console.log('index after', index)
                             if(points[j]===undefined){
                                 queries[j] = parseInt(link[index+1], 10)
                                 points[j] = queries[j]
                             }
                             queries[j] = `q${j+1}=${points[j]}`
-                            console.log('queries[j]', queries[j])
-                            console.log('queries ENDOFALL', queries)
                         }
                         // GETTING RESULT PAGE NUMBER
                         let poi = points.filter(p => p>0)
