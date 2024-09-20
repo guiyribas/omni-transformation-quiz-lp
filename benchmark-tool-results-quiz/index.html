@@ -1102,7 +1102,8 @@ Profitero partners with leading brands to achieve this through:</p>
                         // ADDING QUERY TO URL
                         let queries = []
                         let link = window.location.href
-                        let index = 0
+                        let index = 0 //-1
+                        console.log('points', points)
                         for(let j=0; j<points.length; j++){
                             console.log('!!! FOR !!!')
                             console.log('index before', index)
@@ -1133,7 +1134,7 @@ Profitero partners with leading brands to achieve this through:</p>
                         let query = queries.join('&')
                         let url = window.location.href.split('?')[0] // Split by '?' to clean the current query string
                         addressLink = `${url}?page=${resultPage}&${query}` // Update URL format to use 'page' parameter
-                        console.log("-----------------")
+                        {# console.log("-----------------")
                         console.log('points', points)
                         console.log('poi', poi)
                         console.log('addressLink', addressLink)
@@ -1141,7 +1142,7 @@ Profitero partners with leading brands to achieve this through:</p>
                         console.log('queries', queries)
                         console.log('query', query)
                         console.log('resultPage', resultPage)
-                        console.log("-----------------")
+                        console.log("-----------------") #}
 
 
                         // AREAS FOR IMPROVEMENTS
