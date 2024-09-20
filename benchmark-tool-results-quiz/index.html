@@ -1056,22 +1056,6 @@ Profitero partners with leading brands to achieve this through:</p>
                     let currentPageNumber = 1
                     let strokeWidth = experience.getCurrentPage().getWidth()
 
-                    // Function to get URL parameters
-                    const getQueryParams = () => {
-                        const params = new URLSearchParams(window.location.search);
-                        let points = [];
-                        for (let i = 1; i <= 8; i++) {
-                            let paramValue = parseInt(params.get(`q${i}`), 10);
-                            points.push(isNaN(paramValue) ? 0 : paramValue); // Default to 0 if NaN
-                        }
-                        console.log('Parsed URL parameters:', points);
-                        return points;
-                    };
-
-                    // Initialize points from URL or set defaults
-                    let amount = 8;
-                    let points = getQueryParams(); // Read the points from URL
-
                     // ANSWERS TO FIRST PART OF QUESTIONS
                     const selectFunction = hots => {
                         let select = document.getElementById(hots.id).parentElement
@@ -1083,28 +1067,31 @@ Profitero partners with leading brands to achieve this through:</p>
                     selections.on(CerosSDK.EVENTS.CLICKED, selectFunction)
 
                     // ANSWERS TO SECOND PART OF QUESTIONS
+                    let amount = 8
+                    let points = [...new Array(amount)]
                     const getOrderNumber = (t, name) => {
                         let tag = t.find(q => q.includes(name))
-                        return parseInt(tag ? tag.split(':').pop() : '0', 10); // Handle empty tag gracefully
+                        return parseInt(tag[tag.length-1], 10)
                     }
-
                     const clickedCallback = layer => {
                         let num = getOrderNumber(layer.page.tags, 'question:')
-                        let value = getOrderNumber(layer.tags, 'value:')
-                        if (num !== undefined) {
-                            points[num-1] = isNaN(value) ? 0 : value; // Only assign valid numbers, default to 0 if NaN
-                        }
-                        console.log('Clicked on layer:', layer, ' - Points:', points);
+                        points[num-1] = getOrderNumber(layer.tags, 'value:')
                     }
                     answers.on(CerosSDK.EVENTS.CLICKED, clickedCallback)
 
                     // FORMULAS
+                    const getProperElements = (lay, isObject=false) => {
+                        let objects = lay.filter(l => l.page.pageNumber==currentPageNumber)
+                        if(isObject)
+                            return objects[0]
+                        let nodes = objects.length>1 ? objects.map(s => document.getElementById(s.id)) : document.getElementById(objects[0].id)
+                        return nodes
+                    }
+                    const compareNumbers = (a, b) => parseFloat(a.number) - parseFloat(b.number)
                     const summarize = arra => {
-                        let validNumbers = arra.filter(num => num !== undefined && !isNaN(num));
-                        let n = validNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                        console.log('Summarize:', validNumbers, 'Result:', n / validNumbers.length);
-                        return n / validNumbers.length;
-                    };
+                        let n = arra.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+                        return n/arra.length
+                    }
 
                     // SETTING RESULTS
                     let addressLink = ''
@@ -1113,134 +1100,132 @@ Profitero partners with leading brands to achieve this through:</p>
                     let options = []
                     const calcs = () => {
                         // ADDING QUERY TO URL
-                        let queries = [];
-                        for (let j = 0; j < points.length; j++) {
-                            queries[j] = `q${j+1}=${points[j]}`; // Keep the original points intact
+                        let queries = []
+                        let link = window.location.href
+                        let index = -1
+                        for(let j=0; j<points.length; j++){
+                            index = link.indexOf('=', index+1)
+                            if(points[j]===undefined){
+                                queries[j] = parseInt(link[index+1], 10)
+                                points[j] = queries[j]
+                            }
+                            queries[j] = `q${j+1}=${points[j]}`
                         }
                         // GETTING RESULT PAGE NUMBER
-                        let poi = points.filter(p => p > 0);
-                        let ave = summarize(poi);
-                        console.log('Points:', points, 'Filtered Points:', poi, 'Average:', ave);
-
-                        for (let prop in quiz) {
-                            if (ave > quiz[prop].average) {
-                                resultPage = quiz[prop].pageNum;
-                                score = prop;
-                                break;
+                        let poi = points.filter(p => p>0)
+                        let ave = summarize(poi)
+                        for(let prop in quiz){
+                            if(ave>quiz[prop].average){
+                                resultPage = quiz[prop].pageNum
+                                score = prop
+                                break
                             }
                         }
-                        let query = queries.join('&');
-                        let url = window.location.href.split('?')[0]; // Split by '?' to clean the current query string
-                        addressLink = `${url}?page=${resultPage}&${query}`; // Update URL format to use 'page' parameter
-
-                        // Update the URL without reloading the page
-                        window.history.replaceState(null, '', addressLink); 
-                        console.log('Updated Address Link:', addressLink);
+                        // SCRIPT UPDATE TO WORK ON GOOGLE BUCKET
+                        let query = queries.join('&')
+                        let url = window.location.href.split('?')[0] // Split by '?' to clean the current query string
+                        addressLink = `${url}?page=${resultPage}&${query}` // Update URL format to use 'page' parameter
 
                         // AREAS FOR IMPROVEMENTS
-                        options = [];
-                        const sumAndAverage = (arr, nam) => {
-                            let ar = arr.filter(a => a > 0);
-                            let sum = summarize(ar);
-                            sum = isNaN(sum) ? 100 : sum.toFixed(4);
-                            options.push({ area: nam, number: parseFloat(sum) });
+                        options = []
+                        const sumAndAverage = (arr,nam) => {
+                            let ar = arr.filter(a => a>0)
+                            let sum = summarize(ar)
+                            sum = isNaN(sum) ? 100 : sum.toFixed(4)
+                            options.push({area:nam, number:parseFloat(sum)} )
                         }
-                        sumAndAverage([points[0], points[2], points[7]], 'partnerships');
-                        sumAndAverage([points[1], points[4], points[6]], 'practices');
-                        sumAndAverage([points[3], points[5]], 'people');
-                        options.sort((a, b) => parseFloat(a.number) - parseFloat(b.number));
+                        sumAndAverage([points[0], points[2], points[7]], 'partnerships')
+                        sumAndAverage([points[1], points[4], points[6]], 'practices')
+                        sumAndAverage([points[3], points[5]], 'people')
+                        options.sort(compareNumbers)
                     }
 
                     // PAGE CHANGES
                     const pageChangedCallback = function(page){
-                        points.length = amount;
+                        points.length = amount
 
                         // DYNAMIC PROGRESS BAR
-                        currentPageNumber = page.getPageNumber();
-                        let procentage = (currentPageNumber - 1) / allPages * strokeWidth;
-                        document.documentElement.style.setProperty('--progress', `${procentage}px`);
-                        console.log('Page changed to:', currentPageNumber);
+                        currentPageNumber = page.getPageNumber()
+                        let procentage = (currentPageNumber-1)/allPages * strokeWidth
+                        document.documentElement.style.setProperty('--progress', `${procentage}px`)
 
                         // FORM PAGE
-                        if (currentPageNumber === goResults.page.pageNumber) {
-                            calcs();
+                        if(currentPageNumber==goResults.page.pageNumber){
+                            calcs()
 
-                            texts = [...texts].filter(tex => tex !== undefined);
-                            let form = document.querySelector('div.hubspot-form').firstChild;
+                            texts = [...texts].filter(tex => tex != undefined)
+                            let form = document.querySelector('div.hubspot-form').firstChild
                             let mutation = new MutationObserver(entries => {
-                                let additional = [addressLink, score, options[0].area];
-                                let res = (texts.length !== 0) ? texts.concat(points) : [0, 0].concat(points).fill('the quiz has been canceled during filling');
-                                res = res.concat(additional);
-                                let hiddenFields = Array.from(form.querySelectorAll('input[type="hidden"].hs-input'));
-                                for (let hiddenField of hiddenFields) {
-                                    hiddenField.value = res[hiddenFields.indexOf(hiddenField)];
-                                }
-                            });
-                            mutation.observe(form, { childList: true });
+                                let additional = [addressLink, score, options[0].area]
+                                let res = (texts.length!=0) ? texts.concat(points) : [0,0].concat(points).fill('the quiz has been canceled during filling')
+                                res = res.concat(additional)
+                                let hiddenFields = Array.from( form.querySelectorAll('input[type="hidden"].hs-input') )
+                                for(let hiddenField of hiddenFields)
+                                    hiddenField.value = res[hiddenFields.indexOf(hiddenField)]
+                            })
+                            mutation.observe(form, { childList: true })
                         }
 
                         // RESULTS PAGES
-                        if (page.getTags().includes('results')) {
-                            calcs();
+                        if(page.getTags().includes('results')){
+                            calcs()
+                            window.history.replaceState(null, '', addressLink)
 
                             // DYNAMIC GRAPH
-                            let stars = getProperElements(allStars);
-                            let graph = getProperElements(allGraphs);
-                            let areas = getProperElements(areasForImprovemnets, true);
-                            let heights = [];
-                            let vertices = [];
-                            for (let i = 0; i < stars.length; i++) {
-                                stars[i].style.setProperty('transition', 'left 1s 1s ease-in-out');
-                                stars[i].style.setProperty('left', `${points[i] * 69}px`);
-                                heights[i] = (100 * i) / (stars.length - 1);
-                                vertices[i] = `${(points[i] / 4) * 100}% ${heights[i]}%`;
-                                heights[i] = `0% ${heights[i]}%`;
+                            let stars = getProperElements(allStars)
+                            let graph = getProperElements(allGraphs)
+                            let areas = getProperElements(areasForImprovemnets, true)
+                            let heights = []
+                            let vertices = []
+                            for(let i=0; i<stars.length; i++){
+                                stars[i].style.setProperty('transition', 'left 1s 1s ease-in-out')
+                                stars[i].style.setProperty('left', `${points[i]*69}px`)
+                                heights[i] = (100*i)/(stars.length-1)
+                                vertices[i] = `${(points[i]/4) *100}% ${heights[i]}%`
+                                heights[i] = `0% ${heights[i]}%`
                             }
-                            graph.style.setProperty('clip-path', `polygon(0% 0%,${heights.join(',')},0% 100%)`);
-                            graph.style.setProperty('transition', 'clip-path 1s 1s ease-in-out');
-                            graph.style.setProperty('clip-path', `polygon(0% 0%,${vertices.join(',')},0% 100%)`);
-
-                            if (options[0].area.toLowerCase() === 'partnerships') {
-                                let partnership = experience.findLayerById(areas.items[0].id);
-                                partnership.show();
-                                return;
+                            graph.style.setProperty('clip-path', `polygon(0% 0%,${heights.join(',')},0% 100%)`)
+                            graph.style.setProperty('transition', 'clip-path 1s 1s ease-in-out')
+                            graph.style.setProperty('clip-path', `polygon(0% 0%,${vertices.join(',')},0% 100%)`)
+                            
+                            if(options[0].area.toLowerCase()==='partnerships'){
+                                let partnership = experience.findLayerById(areas.items[0].id)
+                                partnership.show()
+                                return
                             }
-                            if (options[0].area.toLowerCase() === 'practices') {
-                                let practice = experience.findLayerById(areas.items[1].id);
-                                practice.show();
-                                return;
+                            if(options[0].area.toLowerCase()==='practices'){
+                                let practice = experience.findLayerById(areas.items[1].id)
+                                practice.show()
+                                return
                             }
-                            let people = experience.findLayerById(areas.items[2].id);
-                            people.show();
+                            let people = experience.findLayerById(areas.items[2].id)
+                            people.show()
                         }
                     }
-                    experience.on(CerosSDK.EVENTS.PAGE_CHANGED, pageChangedCallback);
+                    experience.on(CerosSDK.EVENTS.PAGE_CHANGED, pageChangedCallback)
 
-                    const pageChangingCallback = page => previousPageNumber = page.getPageNumber();
-                    experience.on(CerosSDK.EVENTS.PAGE_CHANGING, pageChangingCallback);
+                    const pageChangingCallback = page => previousPageNumber = page.getPageNumber()
+                    experience.on(CerosSDK.EVENTS.PAGE_CHANGING, pageChangingCallback)
 
                     // GO TO RESULTS
-                    const layerShownCallback = hot => experience.goToPage(parseFloat(resultPage));
-                    let goResults = experience.findLayersByTag("goto:results").layers[0];
-                    goResults.on(CerosSDK.EVENTS.SHOWN, layerShownCallback);
+                    const layerShownCallback = hot => experience.goToPage( parseFloat(resultPage) )
+                    let goResults = experience.findLayersByTag("goto:results").layers[0]
+                    goResults.on(CerosSDK.EVENTS.SHOWN, layerShownCallback)
 
                     // JUMPING BETWEEN QUESTIONS
                     const nextPageFunction = cta => {
-                        if (cta.tags.includes('go-next')) {
-                            experience.goToPage(currentPageNumber + 1);
-                            console.log('Going to next page:', currentPageNumber + 1);
-                            return;
+                        if(cta.tags.includes('go-next')){
+                            experience.goToPage(currentPageNumber+1)
+                            return
                         }
-                        experience.goToPage(currentPageNumber - 1);
-                        console.log('Going to previous page:', currentPageNumber - 1);
+                        experience.goToPage(currentPageNumber-1)
                     }
-                    let nav = experience.findLayersByTag("navigation");
-                    nav.on(CerosSDK.EVENTS.CLICKED, nextPageFunction);
+                    let nav = experience.findLayersByTag("navigation")
+                    nav.on(CerosSDK.EVENTS.CLICKED, nextPageFunction)
                 }) 
         }); 
     })();
 </script>
-
 <style>
     :root{
         --progress: 20px;
