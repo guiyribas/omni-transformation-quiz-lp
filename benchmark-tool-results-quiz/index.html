@@ -1104,12 +1104,20 @@ Profitero partners with leading brands to achieve this through:</p>
                         let link = window.location.href
                         let index = -1
                         for(let j=0; j<points.length; j++){
+                            console.log('!!! FOR !!!')
+                            console.log('index before', index)
+                            console.log('j',j)
+                            console.log('link', link)
+                            console.log('points[j]', points[j])
                             index = link.indexOf('=', index+1)
+                            console.log('index after', index)
                             if(points[j]===undefined){
                                 queries[j] = parseInt(link[index+1], 10)
                                 points[j] = queries[j]
                             }
                             queries[j] = `q${j+1}=${points[j]}`
+                            console.log('queries[j]', queries[j])
+                            console.log('queries ENDOFALL', queries)
                         }
                         // GETTING RESULT PAGE NUMBER
                         let poi = points.filter(p => p>0)
@@ -1126,10 +1134,13 @@ Profitero partners with leading brands to achieve this through:</p>
                         let url = window.location.href.split('?')[0] // Split by '?' to clean the current query string
                         addressLink = `${url}?page=${resultPage}&${query}` // Update URL format to use 'page' parameter
                         console.log("-----------------")
-                        console.log(addressLink)
-                        console.log(url)
-                        console.log(query)
-                        console.log(query)
+                        console.log('points', points)
+                        console.log('poi', poi)
+                        console.log('addressLink', addressLink)
+                        console.log('url', url)
+                        console.log('queries', queries)
+                        console.log('query', query)
+                        console.log('resultPage', resultPage)
                         console.log("-----------------")
 
 
