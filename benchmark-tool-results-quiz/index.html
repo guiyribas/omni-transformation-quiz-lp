@@ -1182,7 +1182,6 @@ Profitero partners with leading brands to achieve this through:</p>
                         // RESULTS PAGES
                         if (page.getTags().includes('results')) {
                             calcs();
-                            window.history.replaceState(null, '', addressLink); // Update the URL to prevent accidental changes on reload
 
                             // DYNAMIC GRAPH
                             let stars = getProperElements(allStars);
@@ -1200,6 +1199,9 @@ Profitero partners with leading brands to achieve this through:</p>
                             graph.style.setProperty('clip-path', `polygon(0% 0%,${heights.join(',')},0% 100%)`);
                             graph.style.setProperty('transition', 'clip-path 1s 1s ease-in-out');
                             graph.style.setProperty('clip-path', `polygon(0% 0%,${vertices.join(',')},0% 100%)`);
+
+                            // Update the URL to prevent accidental changes on reload
+                            window.history.replaceState(null, '', addressLink);
 
                             if (options[0].area.toLowerCase() === 'partnerships') {
                                 let partnership = experience.findLayerById(areas.items[0].id);
